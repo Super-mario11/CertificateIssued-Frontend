@@ -151,7 +151,7 @@ export default function AdminStudent() {
           <Link to="/admin/dashboard" className="text-sm underline">
             Back to dashboard
           </Link>
-          <h1 className="text-3xl mt-2">Student Workspace</h1>
+          <h1 className="text-2xl sm:text-3xl mt-2">Student Workspace</h1>
           <p className="text-sm text-slate">
             Update profile details, issue certificates, and review history in one place.
           </p>
@@ -246,7 +246,7 @@ export default function AdminStudent() {
           <p className="text-xs uppercase tracking-[0.2em] text-slate">
             Certificate Snapshot
           </p>
-          <h2 className="text-2xl mt-2">At a Glance</h2>
+          <h2 className="text-xl sm:text-2xl mt-2">At a Glance</h2>
           <div className="mt-5 space-y-4 text-sm">
             <div className="rounded-xl border border-goldSoft bg-goldSoft/40 px-4 py-3">
               <p className="text-xs uppercase tracking-wide text-slate">
@@ -275,7 +275,7 @@ export default function AdminStudent() {
             <p className="text-xs uppercase tracking-[0.2em] text-slate">
               Certificate Builder
             </p>
-            <h2 className="text-2xl mt-2">Issue a New Certificate</h2>
+            <h2 className="text-xl sm:text-2xl mt-2">Issue a New Certificate</h2>
             <p className="text-sm text-slate">
               Add course information, upload the credential, and publish it to the
               student record.
@@ -379,7 +379,7 @@ export default function AdminStudent() {
             </div>
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary w-full sm:w-auto"
             disabled={singleLimitReached || modeChangePending}
           >
             Add Certificate
@@ -443,7 +443,7 @@ export default function AdminStudent() {
         <div className="space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <h2 className="text-2xl">Issued Certificates</h2>
+              <h2 className="text-xl sm:text-2xl">Issued Certificates</h2>
               <p className="text-sm text-slate">
                 Review active and revoked credentials with quick actions.
               </p>

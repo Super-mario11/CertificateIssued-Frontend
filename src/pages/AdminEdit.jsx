@@ -69,7 +69,7 @@ export default function AdminEdit() {
   return (
     <div className="mx-auto max-w-3xl">
       <div className="card rounded-2xl p-6">
-        <h1 className="text-2xl">Edit Certificate</h1>
+        <h1 className="text-2xl sm:text-3xl">Edit Certificate</h1>
         <p className="text-sm text-slate">
           Update details or upload a new image.
         </p>

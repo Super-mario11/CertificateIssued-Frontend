@@ -157,7 +157,7 @@ export default function AdminCreate() {
     <div className="mx-auto max-w-5xl space-y-8">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl">New Student</h1>
+          <h1 className="text-2xl sm:text-3xl">New Student</h1>
           <p className="text-sm text-slate">
             Add student details and certificates.
           </p>
@@ -170,7 +170,7 @@ export default function AdminCreate() {
             <p className="text-xs uppercase tracking-[0.2em] text-slate">
               Step 1
             </p>
-            <h2 className="text-2xl mt-2">Student Details</h2>
+            <h2 className="text-xl sm:text-2xl mt-2">Student Details</h2>
             <p className="text-sm text-slate">
               This name will be used for every certificate added below.
             </p>
@@ -233,7 +233,7 @@ export default function AdminCreate() {
             <p className="text-xs uppercase tracking-[0.2em] text-slate">
               Step 3
             </p>
-            <h2 className="text-2xl mt-2">Review & Save</h2>
+            <h2 className="text-xl sm:text-2xl mt-2">Review & Save</h2>
             <p className="text-sm text-slate">
               Confirm the student and certificate count before submitting.
             </p>
@@ -272,7 +272,7 @@ export default function AdminCreate() {
               <p className="text-xs uppercase tracking-[0.2em] text-slate">
                 Step 2
               </p>
-              <h2 className="text-2xl mt-2">Add Certificates</h2>
+              <h2 className="text-xl sm:text-2xl mt-2">Add Certificates</h2>
               <p className="text-sm text-slate">
                 Build one certificate at a time and add it to the list.
               </p>
@@ -356,13 +356,13 @@ export default function AdminCreate() {
                 <button
                   type="button"
                   onClick={saveDraft}
-                  className="btn btn-primary"
+                  className="btn btn-primary w-full sm:w-auto"
                   disabled={!allowMultiple && certificates.length >= 1 && editingIndex === null}
                 >
                   {editingIndex === null ? "Add Certificate" : "Update Certificate"}
                 </button>
                 {editingIndex !== null ? (
-                  <button type="button" onClick={resetDraft} className="btn btn-outline">
+                  <button type="button" onClick={resetDraft} className="btn btn-outline w-full sm:w-auto">
                     Cancel Edit
                   </button>
                 ) : null}

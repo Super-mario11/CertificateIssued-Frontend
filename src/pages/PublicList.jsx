@@ -99,7 +99,7 @@ export default function PublicList() {
 
           {student ? (
             <div className="mt-4 space-y-2">
-              <h1 className="text-3xl">{student.fullName || student.name}</h1>
+              <h1 className="text-2xl sm:text-3xl">{student.fullName || student.name}</h1>
               {student.email ? (
                 <p className="text-sm text-slate">{student.email}</p>
               ) : null}
@@ -192,7 +192,7 @@ export default function PublicList() {
           />
           <p className="text-sm text-slate">Excellence Computer Center</p>
         </div>
-        <h1 className="text-3xl">Students</h1>
+        <h1 className="text-2xl sm:text-3xl">Students</h1>
         <p className="text-sm text-slate">
           View student names and certificate names.
         </p>
@@ -236,7 +236,7 @@ export default function PublicList() {
       {loadingStudent ? <p className="text-sm text-slate">Loading...</p> : null}
 
       <section className="space-y-4">
-        <h2 className="text-2xl">Student Directory</h2>
+        <h2 className="text-xl sm:text-2xl">Student Directory</h2>
         {loadingList ? (
           <p className="text-sm text-slate">Loading student directory...</p>
         ) : filteredStudents.length === 0 ? (
@@ -248,7 +248,7 @@ export default function PublicList() {
                 <p className="text-xs uppercase tracking-[0.2em] text-slate">
                   Student ID {item.id}
                 </p>
-                <h3 className="text-xl">{item.fullName || item.name}</h3>
+                <h3 className="text-lg sm:text-xl">{item.fullName || item.name}</h3>
                 <p className="mt-2 text-sm text-slate">
                   Certificate Name:
                   {" "}
@@ -257,7 +257,7 @@ export default function PublicList() {
                     : "No certificates"}
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <Link to={`/student/${item.id}`} className="btn btn-primary">
+                  <Link to={`/student/${item.id}`} className="btn btn-primary w-full sm:w-auto">
                     View Certificates
                   </Link>
                 </div>
