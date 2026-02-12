@@ -38,21 +38,21 @@ export default function CertificateCard({ item, onDelete }) {
             </span>
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
-            <Link to={`/certificate/${item.certificateId}`} className="underline">
+            <Link to={`/certificate/${item.certificateId}`} className="btn btn-outline">
               Public Link
             </Link>
             {item.student?.id ? (
-              <Link to={`/admin/student/${item.student.id}`} className="underline">
+              <Link to={`/admin/student/${item.student.id}`} className="btn btn-ghost">
                 Student Profile
               </Link>
             ) : null}
-            <Link to={`/admin/edit/${item.id}`} className="underline">
+            <Link to={`/admin/edit/${item.id}`} className="btn btn-ghost">
               Edit
             </Link>
             <button
               type="button"
               onClick={() => onDelete(item.id)}
-              className="text-red-600 underline"
+              className="btn border border-red-200 bg-red-50 text-red-700 hover:bg-red-100"
             >
               Delete
             </button>

@@ -148,7 +148,7 @@ export default function AdminStudent() {
     <div className="space-y-10">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <Link to="/admin/dashboard" className="text-sm underline">
+          <Link to="/admin/dashboard" className="btn btn-ghost text-sm">
             Back to dashboard
           </Link>
           <h1 className="text-2xl sm:text-3xl mt-2">Student Workspace</h1>
@@ -500,19 +500,19 @@ export default function AdminStudent() {
                       <p className="text-xs text-slate">No comments added.</p>
                     )}
                     <div className="flex flex-wrap items-center gap-3 text-sm">
-                      <Link to={`/admin/edit/${cert.id}`} className="underline">
+                      <Link to={`/admin/edit/${cert.id}`} className="btn btn-ghost">
                         Edit
                       </Link>
                       <Link
                         to={`/certificate/${cert.certificateId}`}
-                        className="underline"
+                        className="btn btn-outline"
                       >
                         Public
                       </Link>
                       <button
                         type="button"
                         onClick={() => handleDelete(cert.id)}
-                        className="text-red-600 underline"
+                        className="btn border border-red-200 bg-red-50 text-red-700 hover:bg-red-100"
                       >
                         Delete
                       </button>

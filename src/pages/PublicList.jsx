@@ -89,7 +89,7 @@ export default function PublicList() {
     return (
       <div className="space-y-6">
         <div className="card rounded-2xl p-5">
-          <Link to="/certificates" className="text-sm underline">
+          <Link to="/certificates" className="btn btn-ghost text-sm">
             Back to students
           </Link>
           {loadingStudent ? (

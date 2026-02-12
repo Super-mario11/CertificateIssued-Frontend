@@ -452,13 +452,13 @@ export default function AdminCreate() {
                     </span>
                   </div>
                   <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
-                    <button type="button" onClick={() => editCertificate(index)} className="underline">
+                    <button type="button" onClick={() => editCertificate(index)} className="btn btn-ghost">
                       Edit
                     </button>
                     <button
                       type="button"
                       onClick={() => removeCertificate(index)}
-                      className="text-red-600 underline"
+                      className="btn border border-red-200 bg-red-50 text-red-700 hover:bg-red-100"
                     >
                       Remove
                     </button>
