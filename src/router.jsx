@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 const Login = lazy(() => import("./pages/Login.jsx"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword.jsx"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard.jsx"));
 const AdminCreate = lazy(() => import("./pages/AdminCreate.jsx"));
 const AdminEdit = lazy(() => import("./pages/AdminEdit.jsx"));
@@ -16,6 +17,7 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Navigate to="/certificates" replace />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route
           path="/admin/dashboard"
           element={

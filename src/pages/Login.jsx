@@ -10,10 +10,13 @@ export default function Login() {
   const reason = search.get("reason");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [forgotMessage, setForgotMessage] = useState("");
+  const [isSendingReset, setIsSendingReset] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
     setError("");
+    setForgotMessage("");
     try {
       const res = await api.post("/api/auth/login", { password });
       localStorage.setItem("token", res.data.token);
@@ -22,6 +25,23 @@ export default function Login() {
       navigate(redirectTo);
     } catch (err) {
       setError(err?.response?.data?.message || "Login failed. Check credentials.");
+    }
+  }
+
+  async function handleForgotPassword() {
+    setError("");
+    setForgotMessage("");
+    setIsSendingReset(true);
+
+    try {
+      const res = await api.post("/api/auth/forgot-password");
+      setForgotMessage(
+        res?.data?.message || "If the account exists, a reset link has been sent."
+      );
+    } catch (_err) {
+      setForgotMessage("If the account exists, a reset link has been sent.");
+    } finally {
+      setIsSendingReset(false);
     }
   }
 
@@ -62,11 +82,22 @@ export default function Login() {
             />
           </div>
           {error ? <p className="text-sm text-red-600">{error}</p> : null}
+          {forgotMessage ? (
+            <p className="text-sm text-emerald-700">{forgotMessage}</p>
+          ) : null}
           <button
             type="submit"
             className="btn btn-primary w-full"
           >
             Sign In
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline w-full"
+            onClick={handleForgotPassword}
+            disabled={isSendingReset}
+          >
+            {isSendingReset ? "Sending reset link..." : "Forgot Password"}
           </button>
         </form>
       </div>
